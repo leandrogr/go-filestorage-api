@@ -139,6 +139,7 @@ func GetFile(c *gin.Context) {
 	// 	})
 	// 	return
 	// }
+	//teste
 
 	resp, err := svc.GetObject(&s3.GetObjectInput{
 		Bucket: aws.String(os.Getenv("AWS_BUCKET")),
