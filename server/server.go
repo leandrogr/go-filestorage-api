@@ -2,6 +2,7 @@ package server
 
 import (
 	"log"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/leandrogr/go-filestorage-api/server/routes"
@@ -14,7 +15,7 @@ type Server struct {
 
 func NewServer() Server {
 	return Server{
-		port:   "5000",
+		port:   os.Getenv("PORT"),
 		server: gin.Default(),
 	}
 }
