@@ -42,10 +42,8 @@ func CreateFile(c *gin.Context) {
 	buffer := make([]byte, 512)
 	_, err = file.Read(buffer)
 	if err != nil {
-		c.JSON(400, gin.H{
-			"message": err,
-		})
-		return
+		fmt.Println("Error:", err)
+		os.Exit(1)
 	}
 	contentType := http.DetectContentType(buffer)
 	filepath := directory + "/" + fileHeader.Filename
